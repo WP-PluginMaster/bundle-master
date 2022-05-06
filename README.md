@@ -1,5 +1,14 @@
+ ##installation
+ 
+ ```$xslt
+    npm i bundle-master 
+```
+ 
+ 
  # Webpack Configuration for React,Vue, SCSS in any peoject (PHP, Node js, Python, etc.) 
  
+
+Easy Config for webpack.config.js/vite.config.js:
 ```
   let builder = require("bundle-master")
  
@@ -11,6 +20,8 @@
 
  module.exports = config
 ```
+** for vite js, support only vue js bundling.
+
  
  NPM Package need to install:
  
@@ -82,5 +93,25 @@
    }
     ```
   
+
+ # Vite Configuration for Vue JS in any peoject (PHP, Node js, Python, etc.) 
+  
+ Add following devDependencies & dependencies: 
+  
+ *** add Latest Version.
+
+ ``` 
+    "dependencies": { 
+        "vue": "^3.2.19",
+        "vuex": "^4.0.2"
+    },
+     "devDependencies": {
+        "@vitejs/plugin-vue": "^1.9.2",
+        "@vue/compiler-sfc": "^3.2.19", 
+        "sass": "^1.45.2",
+        "vite": "^2.6.1"
+     }
+  ```
+ 
   
   
