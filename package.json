@@ -1,6 +1,25 @@
 {
   "name": "bundle-master",
-  "version": "1.0.6",
-   "devDependencies": {
-  }
+  "version": "1.0.0",
+  "devDependencies": {},
+  "description": "Easy webpack Configuration for React,Vue, SCSS & Vite configuration for Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WP-Plugin-Master/bundle-master.git"
+  },
+  "keywords": [
+    "webpack",
+    "scss",
+    "compile"
+  ],
+  "author": "Al Emran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WP-Plugin-Master/bundle-master/issues"
+  },
+  "homepage": "https://github.com/WP-Plugin-Master/bundle-master#readme"
 }
