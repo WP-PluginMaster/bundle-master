@@ -17,7 +17,6 @@ class GenerateConfig {
     }
 
     entryName() {
-        let entryname = '';
         let splitOutput = this.config.output.split(".");
 
         if (typeof splitOutput[1] === 'undefined') {
@@ -56,6 +55,12 @@ class GenerateConfig {
         }
     }
 
+    resolveAlias() {
+        if (typeof this.config.options.alias !== 'undefined') {
+            this.fullConfig.resolve.alias = this.config.options.alias;
+        }
+    }
+
     get(item) {
         this.config = item;
 
@@ -65,6 +70,7 @@ class GenerateConfig {
         this.resolveOutput();
 
         this.resolvePlugin();
+        this.resolveAlias();
 
         return this.fullConfig;
     }
