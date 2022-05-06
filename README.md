@@ -8,7 +8,7 @@
  # Webpack Configuration for React,Vue, SCSS in any peoject (PHP, Node js, Python, etc.) 
  
 
-Easy Config for webpack.config.js/vite.config.js:
+Easy Config for webpack.config.js:
 ```
   let builder = require("bundle-master")
  
@@ -20,6 +20,18 @@ Easy Config for webpack.config.js/vite.config.js:
 
  module.exports = config
 ```
+
+Easy Config for vite.config.js
+
+```
+import builder  from  "plugin-master-js-build"
+
+import vue  from '@vitejs/plugin-vue';
+
+export default  builder.vite('resources/js/vue/app.js', 'assets/js/vue', {plugins:[vue()]});
+
+```
+
 ** for vite js, support only vue js bundling.
 
  
