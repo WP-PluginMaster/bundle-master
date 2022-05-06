@@ -1,7 +1,7 @@
- ##installation
+ ## installation
  
  ```$xslt
-    npm i bundle-master 
+ npm i bundle-master 
 ```
  
  
@@ -80,7 +80,7 @@ Easy Config for webpack.config.js/vite.config.js:
   
   For SCSS/SASS, add following devDependencies & dependencies: 
   
-    *** add Latest Version.
+  *** add Latest Version.
   ```
   "devDependencies": {
    "ignore-emit-webpack-plugin": "^2.0.6",
@@ -91,7 +91,7 @@ Easy Config for webpack.config.js/vite.config.js:
     },
    "dependencies": { 
    }
-    ```
+  ```
   
 
  # Vite Configuration for Vue JS in any peoject (PHP, Node js, Python, etc.) 
