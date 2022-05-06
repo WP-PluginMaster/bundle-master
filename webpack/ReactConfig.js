@@ -1,6 +1,6 @@
- 
+
 const devServer = require('./BaseConfig')
- 
+
 const react = {
     devServer: devServer,
     entry: {},
@@ -18,10 +18,9 @@ const react = {
                 }
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(s[ac]ss|css)$/i,
                 exclude: /node_modules/,
                 use: [
-                    "style-loader",
                     "css-loader",
                     "sass-loader",
                 ],

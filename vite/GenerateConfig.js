@@ -3,12 +3,11 @@
 */
 
 const path = require('path');
-const config = require('./Config.js');
 
 class GenerateConfig {
 
     constructor(basePath) {
-        this.fullConfig = config
+        this.fullConfig = require('./Config.js');
         this.basePath = basePath;
         this.config = {};
     }
