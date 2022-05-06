@@ -1,7 +1,7 @@
- ##installation
+ ## Installation
  
  ```$xslt
-    npm i bundle-master 
+   npm i bundle-master 
 ```
  
  
