@@ -1,6 +1,6 @@
 {
   "name": "bundle-master",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {},
   "description": "Easy webpack Configuration for React,Vue, SCSS & Vite configuration for Vue",
   "main": "index.js",
