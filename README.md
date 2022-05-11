@@ -92,7 +92,7 @@ export default  builder.vite('resources/js/vue/app.js', 'assets/js/vue', {plugin
   
   For SCSS/SASS, add following devDependencies & dependencies: 
   
-    *** add Latest Version.
+  *** add Latest Version.
   ```
   "devDependencies": {
    "ignore-emit-webpack-plugin": "^2.0.6",
@@ -103,7 +103,7 @@ export default  builder.vite('resources/js/vue/app.js', 'assets/js/vue', {plugin
     },
    "dependencies": { 
    }
-    ```
+  ```
   
 
  # Vite Configuration for Vue JS in any peoject (PHP, Node js, Python, etc.) 
