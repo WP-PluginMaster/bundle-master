@@ -1,32 +1,13 @@
 const path = require('path');
 let GenerateWebpackConfig = require('./webpack/GenerateConfig.js')
-let GenerateViteConfig = require('./vite/GenerateConfig.js')
-
 
 class BundleMastering {
 
     constructor() {
-        this.bundler = 'webpack';
+
         this.config = [];
         this.bundlerConfig = [];
-        this.baseDirectory = ''
-
         this.basePath = __dirname + '/../../';
-    }
-
-    webpack(baseDirectory = '') {
-        this.baseDirectory = baseDirectory;
-        this.bundler = 'webpack';
-        return this;
-    }
-
-    vite(source, output, options = {}) {
-        let Instance = new GenerateViteConfig(this.basePath);
-        return Instance.get({
-            source: source,
-            output: output,
-            options: options
-        })
     }
 
     react(source, output, options = {}) {
@@ -75,7 +56,7 @@ class BundleMastering {
                 expectedConfig = require('./webpack/ScssConfig.js')
             }
 
-            let Instance = new GenerateWebpackConfig(this.basePath, expectedConfig, this.baseDirectory);
+            let Instance = new GenerateWebpackConfig(this.basePath, expectedConfig);
             this.bundlerConfig.push(Instance.get(item))
         })
     }

@@ -5,11 +5,10 @@
 const path = require('path');
 
 class GenerateConfig {
-
-    constructor(basePath, fullConfig, baseDirectory = '/') {
+    constructor(basePath, fullConfig) {
         this.fullConfig = fullConfig
         this.basePath = basePath;
-        this.fullConfig.devServer.static.directory = path.join(this.basePath, baseDirectory)
+        this.fullConfig.devServer.static.directory = path.join(this.basePath, '/')
         this.config = {};
     }
 
@@ -18,7 +17,6 @@ class GenerateConfig {
     }
 
     entryName() {
-        let entryname = '';
         let splitOutput = this.config.output.split(".");
 
         if (typeof splitOutput[1] === 'undefined') {
