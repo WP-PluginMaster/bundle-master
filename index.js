@@ -56,6 +56,10 @@ class BundleMastering {
                 expectedConfig = require('./webpack/ScssConfig.js')
             }
 
+            if (item.type === 'postCss') {
+                expectedConfig = require('./webpack/PostCssConfig.js')
+            }
+
             let Instance = new GenerateWebpackConfig(this.basePath, expectedConfig);
             this.bundlerConfig.push(Instance.get(item))
         })

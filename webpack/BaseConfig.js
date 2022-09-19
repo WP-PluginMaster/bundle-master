@@ -3,8 +3,7 @@ const devServer = {
    static: {
         directory: '',
     },
-    port: 8080,
-    hot: true
+    port: 8080
 }
  
 module.exports = devServer

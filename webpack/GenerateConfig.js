@@ -20,12 +20,12 @@ class GenerateConfig {
         let splitOutput = this.config.output.split(".");
 
         if (typeof splitOutput[1] === 'undefined') {
-            let splitSource = this.config.source.split("/");
-            return this.removeExtension(splitSource[splitSource.length - 1]);
+            let splitSource = this.config.source;
+            return this.removeExtension(splitSource);
         }
 
-        splitOutput = this.config.output.split("/");
-        return this.removeExtension(splitOutput[splitOutput.length - 1]);
+        splitOutput = this.config.output ;
+        return this.removeExtension(splitOutput);
     }
 
     resolveEntry() {
@@ -34,13 +34,13 @@ class GenerateConfig {
 
     resolveOutput() {
 
-        let splitOutput = this.config.output.split(".");
-        if (typeof splitOutput[1] !== 'undefined') {
-            let splitOutput = this.config.output.split("/");
-            this.config.output = this.config.output.replace(splitOutput[splitOutput.length - 1], "");
-        }
+        // let splitOutput = this.config.output.split(".");
+        // if (typeof splitOutput[1] !== 'undefined') {
+        //     let splitOutput = this.config.output.split("/");
+        //     this.config.output = this.config.output.replace(splitOutput[splitOutput.length - 1], "");
+        // }
 
-        this.fullConfig.output.path = path.resolve(this.basePath, this.config.output)
+        this.fullConfig.output.path =  this.basePath
     }
 
     resolveRules() {
