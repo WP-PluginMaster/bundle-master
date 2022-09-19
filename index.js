@@ -4,7 +4,6 @@ let GenerateWebpackConfig = require('./webpack/GenerateConfig.js')
 class BundleMastering {
 
     constructor() {
-
         this.config = [];
         this.bundlerConfig = [];
         this.basePath = __dirname + '/../../';
@@ -21,16 +20,19 @@ class BundleMastering {
     }
 
     vue(source, output, options = {}) {
+
         this.config.push({
             source: source,
             output: output,
             options: options,
             type: 'vue',
         });
+
         return this;
     }
 
     scss(source, output, options = {}) {
+
         this.config.push({
             source: source,
             output: output,
@@ -40,31 +42,33 @@ class BundleMastering {
         return this;
     }
 
-    generateWebpackConfig() {
-        this.config.forEach(item => {
+    async generateWebpackConfig() {
+
+        this.bundlerConfig = [];
+        for (const item of this.config) {
             let expectedConfig = {};
 
             if (item.type === 'vue') {
-                expectedConfig = require('./webpack/VueConfig.js')
+                expectedConfig = Object.assign({}, require('./webpack/VueConfig.js'));
             }
 
             if (item.type === 'react') {
-                expectedConfig = require('./webpack/ReactConfig.js')
+                expectedConfig = Object.assign({}, require('./webpack/ReactConfig.js'))
             }
 
             if (item.type === 'scss') {
-                expectedConfig = require('./webpack/ScssConfig.js')
+                expectedConfig = Object.assign({}, require('./webpack/ScssConfig.js'))
             }
 
             if (item.type === 'postCss') {
-                expectedConfig = require('./webpack/PostCssConfig.js')
+                expectedConfig = Object.assign({}, require('./webpack/PostCssConfig.js'))
             }
 
             let Instance = new GenerateWebpackConfig(this.basePath, expectedConfig);
-            this.bundlerConfig.push(Instance.get(item))
-        })
-    }
 
+            this.bundlerConfig.push(await Instance.get(item))
+        }
+    }
 
     async init() {
         await this.generateWebpackConfig();
