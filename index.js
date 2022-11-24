@@ -42,6 +42,28 @@ class BundleMastering {
         return this;
     }
 
+    postCss(source, output, options = {}) {
+
+        this.config.push({
+            source: source,
+            output: output,
+            options: options,
+            type: 'postCss',
+        });
+        return this;
+    }
+
+    js(source, output, options = {}) {
+
+        this.config.push({
+            source: source,
+            output: output,
+            options: options,
+            type: 'js',
+        });
+        return this;
+    }
+
     async generateWebpackConfig() {
 
         this.bundlerConfig = [];
@@ -62,6 +84,10 @@ class BundleMastering {
 
             if (item.type === 'postCss') {
                 expectedConfig = Object.assign({}, require('./webpack/PostCssConfig.js'))
+            }
+
+            if (item.type === 'js') {
+                expectedConfig = Object.assign({}, require('./webpack/JavascriptConfig.js'))
             }
 
             let Instance = new GenerateWebpackConfig(this.basePath, expectedConfig);
